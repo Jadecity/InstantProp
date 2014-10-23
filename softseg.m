@@ -12,15 +12,17 @@ seg = cell(1, K);
 [rows, cols, chans] = size(img);
 ftmap = buildFtmap(img, true);
 
-%sample K patches randomly
+%sample K patches randomly, each 20-by-20
 psize = [ceil(rows/K), ceil(cols/K)];
+%psize = [20, 20];
 randrows = datasample(1:(rows-psize(1)), K);
 randcols = datasample(1:(cols-psize(2)), K);
 %do edit propagation for each patch
 edits = zeros(rows, cols, K);
 step = 0.1;
 alpha = 0.3^2;
-for k=1:K
+parfor k=1:K
+    psize = [ceil(rows/K), ceil(cols/K)];
     % build weight matrix and edit
     r = randrows(k):randrows(k)+psize(1)-1;
     c = randcols(k):randcols(k)+psize(2)-1;

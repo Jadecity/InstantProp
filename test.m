@@ -1,5 +1,5 @@
 %add color space tranfer lib to path
-addpath(genpath('E:\3rd_party_libs\mm_libs\color_space'));
+addpath(genpath('E:\lvhao\ColorEn\optprop'));
 
 img = imread('res/1.jpg');
 [rows, cols, chans] = size(img);
