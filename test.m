@@ -1,5 +1,5 @@
 %add color space tranfer lib to path
-addpath(genpath('E:\lvhao\ColorEn\optprop'));
+addpath(genpath('/nfs/hlv/workspace/ColorEn/optprop'));
 
 img = imread('res/1.jpg');
 [rows, cols, chans] = size(img);

@@ -21,7 +21,7 @@ randcols = datasample(1:(cols-psize(2)), K);
 edits = zeros(rows, cols, K);
 step = 0.1;
 alpha = 0.3^2;
-parfor k=1:K
+for k=1:K
     psize = [ceil(rows/K), ceil(cols/K)];
     % build weight matrix and edit
     r = randrows(k):randrows(k)+psize(1)-1;
